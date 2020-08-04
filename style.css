@@ -1,0 +1,8 @@
+.container-fluid {
+  min-height: 100vh;
+  padding-top: 50vh;
+}
+
+.card {
+  transform: translateY(-50%);
+}
