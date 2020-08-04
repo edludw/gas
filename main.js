@@ -34,11 +34,11 @@ function gasDay() {
     dayOnly = gasday.getDate();
   if (dayOnly - today > 0) {
     nextTurn.innerHTML = `Siguiente turno: ${dayOnly - today} día(s).`;
-  } else if (dayOnly - today === 0) {
+  } else if (dayOnly - today <= 0) {
     nextTurn.textContent = "¡Hoy te toca!";
     dayOnly += 6;
   }
-
+  console.log(dayOnly);
   setTimeout(gasDay, 60000);
 }
 
