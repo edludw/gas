@@ -29,10 +29,10 @@ function changeDay() {
 
 let gasday = new Date(2020, 7, 5),
   dayOnly = gasday.getDate();
+let day = new Date(),
+  today = day.getDate();
 
 function gasDay() {
-  let day = new Date(),
-    today = day.getDate();
   if (dayOnly - today > 0) {
     nextTurn.innerHTML = `Siguiente turno: ${dayOnly - today} día(s).`;
   } else if (dayOnly - today <= 0) {
@@ -43,5 +43,20 @@ function gasDay() {
   setTimeout(gasDay, 1000);
 }
 
+function notifyUser() {
+  if (dayOnly - today === 5) {
+    if (Notification.permission === "granted") {
+      let notify = new Notification("¡Hoy te toca echar gasolina!");
+    } else if (Notification.permission !== "denied") {
+      Notification.requestPermission(function (permission) {
+        if (permission === "granted") {
+          let notify = new Notification("¡Hoy te toca echar gasolina!");
+        }
+      });
+    }
+  }
+}
+
 changeDay();
 gasDay();
+notifyUser();
