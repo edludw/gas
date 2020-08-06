@@ -27,11 +27,12 @@ function changeDay() {
   setTimeout(changeDay, 1000);
 }
 
+let gasday = new Date(2020, 7, 5),
+  dayOnly = gasday.getDate();
+
 function gasDay() {
   let day = new Date(),
     today = day.getDate();
-  let gasday = new Date(2020, 7, 5),
-    dayOnly = gasday.getDate();
   if (dayOnly - today > 0) {
     nextTurn.innerHTML = `Siguiente turno: ${dayOnly - today} día(s).`;
   } else if (dayOnly - today <= 0) {
@@ -39,7 +40,7 @@ function gasDay() {
     dayOnly += 6;
   }
   console.log(dayOnly);
-  setTimeout(gasDay, 60000);
+  setTimeout(gasDay, 1000);
 }
 
 changeDay();
