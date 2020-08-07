@@ -44,7 +44,7 @@ function gasDay() {
 }
 
 function notifyUser() {
-  if (dayOnly - today === 5) {
+  if (dayOnly - today === 0) {
     if (Notification.permission === "granted") {
       let notify = new Notification("¡Hoy te toca echar gasolina!");
     } else if (Notification.permission !== "denied") {
