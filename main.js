@@ -37,7 +37,7 @@ function gasDay() {
     nextTurn.innerHTML = `Siguiente turno: ${dayOnly - today} día(s).`;
   } else if (dayOnly - today <= 0) {
     nextTurn.textContent = "¡Hoy te toca!";
-    dayOnly += 6;
+    dayOnly += 5;
   }
   console.log(dayOnly);
   setTimeout(gasDay, 1000);
