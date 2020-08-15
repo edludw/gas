@@ -35,7 +35,7 @@ let day = new Date(),
 function gasDay() {
   if (dayOnly - today > 0) {
     nextTurn.innerHTML = `Siguiente turno: ${dayOnly - today} día(s).`;
-  } else if (dayOnly - today <= 0) {
+  } else if (dayOnly - today == 0) {
     nextTurn.textContent = "¡Hoy te toca!";
     dayOnly += 5;
   }
